@@ -10,6 +10,4 @@ public class DownbitApplication {
 		//hello woo
 		SpringApplication.run(DownbitApplication.class, args);
 	}
-
-
 }
