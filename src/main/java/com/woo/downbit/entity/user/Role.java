@@ -1,8 +1,5 @@
 package com.woo.downbit.entity.user;
 
-import lombok.Data;
-
-@Data
 public enum Role {
 
     ROLE_USER("유저"),
@@ -12,5 +9,9 @@ public enum Role {
 
     Role(String value) {
         this.value = value;
+    }
+
+    public String getValue() {
+        return value;
     }
 }
