@@ -2,6 +2,8 @@ package com.woo.downbit.controller.user;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.woo.downbit.dto.user.LoginResponseDto;
+import com.woo.downbit.entity.user.User;
+import com.woo.downbit.repository.user.CurrentUser;
 import com.woo.downbit.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -28,8 +30,11 @@ public class UserController {
         String jwtToken = userService.login(code);
         LoginResponseDto response = LoginResponseDto.builder().accessToken(jwtToken).build();
 
-        log.info(response.toString());
-
         return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/inform")
+    public ResponseEntity test(@CurrentUser User user) {
+        return ResponseEntity.ok(userService.getUserInform(user));
     }
 }
