@@ -1,3 +1,7 @@
+server:
+  servlet:
+    context-path: /api
+
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -32,3 +36,4 @@ jwt:
   secret: dGhpcy1zZWNyZXQta2V5LWlzLXZlcnktaW1wb3J0YW50LWFuZC1hbnlvbmUtZG9uJ3Qta29udy10aGlzLXNlY3JldC1rZXk=
   access-token-expire-time: 18000000000
   refresh-token-expire-time: 604800000
+

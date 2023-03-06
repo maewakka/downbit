@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {KAKAO_AUTH_URL, KAKAO_LOGOUT_URL} from "../login/kakaoAuth";
+import style from './NavBar.module.css';
 
-const NavBar = () => {
+const NavBar = (props) => {
+
+    const userInform = props.userInform;
     const onClickLogin = () => {
         window.location.href = KAKAO_AUTH_URL;
     }
@@ -34,15 +37,21 @@ const NavBar = () => {
                             <a className="nav-link">대회</a>
                         </li>
                     </ul>
+                    <div>
+                        {
+                            localStorage.getItem("accessToken") === null ?
+                                <button type="button" className="btn btn-outline-success" onClick={() => onClickLogin()}>로그인</button>
+                                :
+                                <>
+                                    <img className={style.thumbnail} src={userInform.profileImage}/>
+                                    <span className={style.nickname}>{userInform.nickname} 님</span>
+                                    <button type="button" className="btn btn-outline-success" onClick={onClickLogout}>로그아웃</button>
+                                </>
+
+                        }
+                    </div>
                 </div>
-                <div>
-                    {
-                        localStorage.getItem("accessToken") === null ?
-                            <button type="button" className="btn btn-outline-success" onClick={onClickLogin}>로그인</button>
-                            :
-                            <button type="button" className="btn btn-outline-success" onClick={onClickLogout}>로그아웃</button>
-                    }
-                </div>
+
             </div>
         </nav>
     );

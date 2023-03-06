@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.woo.downbit.dto.user.CustomUserDetails;
+import com.woo.downbit.dto.user.UserInformResponseDto;
 import com.woo.downbit.entity.user.Role;
 import com.woo.downbit.entity.user.User;
 import com.woo.downbit.repository.user.UserRepository;
@@ -57,6 +58,13 @@ public class UserService {
         }
 
         return jwtTokenProvider.createToken(userId);
+    }
+
+    public UserInformResponseDto getUserInform(User user) {
+        return UserInformResponseDto.builder()
+                .nickname(user.getNickname())
+                .profileImage(user.getProfileImage())
+                .build();
     }
 
 

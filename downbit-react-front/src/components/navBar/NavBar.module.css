@@ -1,0 +1,13 @@
+.nickname {
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.thumbnail {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    object-fit: cover;
+    margin-right: 10px;
+}
