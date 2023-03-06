@@ -16,6 +16,7 @@ Kakao API, UpBit API를 사용하여 모의 코인 투자 관련 컨텐츠를 �
 - Spring Boot(2.7.9)
 - React(18.2.0)
 - MySQL with JPA
+- Kubernate
 
 ## :paperclip: 주요 기능
 ### 로그인/회원가입 - 상세보기
